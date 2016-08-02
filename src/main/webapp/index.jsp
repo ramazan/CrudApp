@@ -25,9 +25,9 @@
         <div class="panel panel-primary" >
          <br>
            
-           <div ng-controller="PersonListCtrl">
+           <div ng-controller="refreshController">
       <!-- Yenile Butonu -->
-	<button class="btn btn-primary" ng-click="showData()"><span class="glyphicon glyphicon-refresh" ></span> Yenile</button>
+	<button class="btn btn-primary"  ng-click="reloadPage();"><span class="glyphicon glyphicon-refresh" ></span> Yenile</button>
 	 <!-- Ekle butonu Butonu -->
     <button class="btn btn-primary" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-plus"></span> Ekle</button>
              </div>
