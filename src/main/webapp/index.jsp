@@ -25,10 +25,12 @@
         <div class="panel panel-primary" >
          <br>
            
+           <div ng-controller="PersonListCtrl">
       <!-- Yenile Butonu -->
-	<button class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span> Yenile</button>
+	<button class="btn btn-primary" ng-click="showData()"><span class="glyphicon glyphicon-refresh" ></span> Yenile</button>
 	 <!-- Ekle butonu Butonu -->
     <button class="btn btn-primary" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-plus"></span> Ekle</button>
+             </div>
              <br>
             <br>
             <div class="panel-heading">
@@ -93,7 +95,7 @@
                             </div>
 		    				<input  class="form-control" type="text" placeholder="T.C Kimlik Numarası"  ng-model="tckn" required >
                             <input 	class="form-control" type="text" placeholder="Ad" 					ng-model="firstname" required  >
-                            <input  class="form-control" type="text" placeholder="Soyad" 				ng-model="lastname" required>
+                            <input  class="form-control" type="text" placeholder="Soyad" 				ng-model="surname" required>
                             <input 	class="form-control" type="text" placeholder="Adres" 				ng-model="adress" required>
 <!--                             <input id="register_password" class="form-control" type="password" placeholder="Password" r	equired> -->
             			</div>

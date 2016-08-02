@@ -1,5 +1,8 @@
 package tr.com.thirtytwobit.personApp.resources;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.ws.rs.Consumes;
@@ -14,6 +17,7 @@ import javax.ws.rs.core.MediaType;
 
 import com.google.gson.Gson;
 
+import tr.com.thirtytwobit.personApp.dao.Database;
 import tr.com.thirtytwobit.personApp.dao.ProjectManager;
 import tr.com.thirtytwobit.personApp.model.Person;
 import tr.com.thirtytwobit.personApp.service.PersonService;
@@ -47,8 +51,25 @@ public class PersonController {
 	/// BURALAR YEŞİLLENECEK
 	// TO-DO
 	@POST
-	public Person addPerson(Person person) {
-		return personservice.addPerson(person);
+	public void addPerson(Person person) throws Exception {
+		System.out.println("Tckn : " + person.getTckn() + "  \n ad  : " + person.getFirstname() + "\n  soyad: "
+				+ person.getSurname() + "\n adres : " + person.getAdress());
+
+		Database database = new Database();
+		Connection connection = database.Get_Connection();
+
+		Statement stmt = connection.createStatement();
+		connection.setAutoCommit(false);
+
+		String sql = "INSERT INTO person (tckn,name,lastname,adress) " + "VALUES ('" + person.getTckn() + "','"
+				+ person.getFirstname() + "' ,'" + person.getSurname() + "' ,'" + person.getAdress() + "');";
+
+		stmt.execute(sql);
+
+		stmt.close();
+		connection.commit();
+		connection.close();
+
 	}
 
 	@PUT
