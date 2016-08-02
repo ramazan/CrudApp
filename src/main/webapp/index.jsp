@@ -28,7 +28,7 @@
       <!-- Yenile Butonu -->
 	<button class="btn btn-primary"><span class="glyphicon glyphicon-refresh"></span> Yenile</button>
 	 <!-- Ekle butonu Butonu -->
-    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-plus"></span> Ekle</button>
+    <button class="btn btn-primary" data-toggle="modal" data-target="#login-modal" ><span class="glyphicon glyphicon-plus"></span> Ekle</button>
              <br>
             <br>
             <div class="panel-heading">
@@ -57,6 +57,8 @@
 			           <td>{{person.tckn}}</td>
 			            <td>{{person.firstname}}</td>
 			             <td>{{person.surname}}</td>
+			             <td>	<button class="btn btn-primary"><span class="glyphicon glyphicon-th-list"></span>  Detay</button>
+			             </td>
                   		 </tr>
                   		 
                 </tbody>
@@ -80,25 +82,25 @@
 				</div>
                 
                 <!-- Begin # DIV Form -->
-                <div id="div-forms">
+                <div id="div-forms" ng-controller="postDataController">
                                  
                     <!-- Begin | Register Form -->
-                    <form id="register-form" action="" method="post" role="form">
+                    <form id="register-form"  method="post">
             		    <div class="modal-body">
 		    				<div id="div-register-msg">
                                 <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
                                 <span id="text-register-msg">Lütfen Gerekli Alanları Eksiksiz Doldurunuz.</span>
                             </div>
-		    				<input id="register_tckn" class="form-control" type="text" placeholder="T.C Kimlik Numarası" required>
-                            <input id="register_username" class="form-control" type="text" placeholder="Ad" required>
-                            <input id="register_lastname" class="form-control" type="text" placeholder="Soyad" required>
-                            <input id="register_adress" class="form-control" type="text" placeholder="Adres" required>
-<!--                             <input id="register_password" class="form-control" type="password" placeholder="Password" required> -->
+		    				<input  class="form-control" type="text" placeholder="T.C Kimlik Numarası"  ng-model="tckn" required >
+                            <input 	class="form-control" type="text" placeholder="Ad" 					ng-model="firstname" required  >
+                            <input  class="form-control" type="text" placeholder="Soyad" 				ng-model="lastname" required>
+                            <input 	class="form-control" type="text" placeholder="Adres" 				ng-model="adress" required>
+<!--                             <input id="register_password" class="form-control" type="password" placeholder="Password" r	equired> -->
             			</div>
 		    		    <div class="modal-footer">
                             <div>
                                    <button type="button" class="btn btn-primary btn-lg " data-dismiss="modal">İptal</button>
-                               	   <button type="submit" class="btn btn-primary btn-lg">Kaydet</button>
+                               	   <button value="submit" class="btn btn-primary btn-lg" ng-click="insertData()">Kaydet</button>
                             </div>
                 	    </div>
                     </form>

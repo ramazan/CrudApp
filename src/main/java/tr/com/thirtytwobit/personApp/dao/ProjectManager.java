@@ -5,18 +5,16 @@ import java.util.ArrayList;
 
 import tr.com.thirtytwobit.personApp.model.Person;
 
-
 public class ProjectManager {
-	
-	
-	public ArrayList<Person> getPersons()throws Exception {
+
+	public ArrayList<Person> getPersonsConnections() throws Exception {
 		ArrayList<Person> persons = null;
 		try {
-			    Database database= new Database();
-			    Connection connection = database.Get_Connection();
-				Project project= new Project();
-				persons=project.getPersons(connection);
-		
+			Database database = new Database();
+			Connection connection = database.Get_Connection();
+			Project project = new Project();
+			persons = project.getPersons(connection);
+
 		} catch (Exception e) {
 			throw e;
 		}

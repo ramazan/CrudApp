@@ -18,7 +18,6 @@ import tr.com.thirtytwobit.personApp.dao.ProjectManager;
 import tr.com.thirtytwobit.personApp.model.Person;
 import tr.com.thirtytwobit.personApp.service.PersonService;
 
-
 @Path("/persons")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -29,24 +28,24 @@ public class PersonController {
 	@GET
 	public String getPersons() {
 
-		String persons  = null;
-		try 
-		{
+		String persons = null;
+		try {
 			ArrayList<Person> personData = null;
-			ProjectManager projectManager= new ProjectManager();
-			personData = projectManager.getPersons();
-			//StringBuffer sb = new StringBuffer();
+			ProjectManager projectManager = new ProjectManager();
+			personData = projectManager.getPersonsConnections();
+			// StringBuffer sb = new StringBuffer();
 			Gson gson = new Gson();
 			System.out.println(gson.toJson(personData));
 			persons = gson.toJson(personData);
 
-		} catch (Exception e)
-		{
+		} catch (Exception e) {
 			System.out.println("error" + e.getMessage());
 		}
 		return persons;
 	}
 
+	/// BURALAR YEŞİLLENECEK
+	// TO-DO
 	@POST
 	public Person addPerson(Person person) {
 		return personservice.addPerson(person);
