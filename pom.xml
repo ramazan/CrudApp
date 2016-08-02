@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>tr.com.thirtytwobit</groupId>
-    <artifactId>personApp</artifactId>
+    <artifactId>CrudApp</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>personApp</name>
+    <name>CrudApp</name>
 
     <build>
-        <finalName>personApp</finalName>
+        <finalName>CrudApp</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
