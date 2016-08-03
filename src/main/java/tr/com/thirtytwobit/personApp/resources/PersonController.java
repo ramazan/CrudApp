@@ -39,7 +39,7 @@ public class PersonController {
 			personData = projectManager.getPersonsConnections();
 			// StringBuffer sb = new StringBuffer();
 			Gson gson = new Gson();
-//			System.out.println(gson.toJson(personData));
+			// System.out.println(gson.toJson(personData));
 			persons = gson.toJson(personData);
 
 		} catch (Exception e) {
@@ -52,8 +52,9 @@ public class PersonController {
 	// TO-DO
 	@POST
 	public void addPerson(Person person) throws Exception {
-		System.out.println("Tckn : " + person.getTckn() + "  \n ad  : " + person.getFirstname() + "\n  soyad: "
-				+ person.getSurname() + "\n adres : " + person.getAdress());
+		// System.out.println("Tckn : " + person.getTckn() + " \n ad : " +
+		// person.getFirstname() + "\n soyad: "
+		// + person.getSurname() + "\n adres : " + person.getAdress());
 
 		Database database = new Database();
 		Connection connection = database.Get_Connection();
@@ -73,16 +74,47 @@ public class PersonController {
 	}
 
 	@PUT
-	public Person updatePerson(Person person) {
-		return personservice.updatePerson(person);
+	public void updatePerson(Person person) throws Exception {
+
+		System.out.println("id : " + person.getId() + "Tckn : " + person.getTckn() + " \n ad : " + person.getFirstname()
+				+ "\n soyad: " + person.getSurname() + "\n adres : " + person.getAdress());
+
+		Database database = new Database();
+		Connection connection = database.Get_Connection();
+
+		Statement stmt = connection.createStatement();
+		connection.setAutoCommit(false);
+
+		String sql = "UPDATE person SET tckn = '" + person.getTckn() + "',name='" + person.getFirstname()
+				+ "',lastname='" + person.getSurname() + "',adress='" + person.getAdress() + "' WHERE id='"
+				+ person.getId() + "';";
+
+		stmt.execute(sql);
+
+		stmt.close();
+		connection.commit();
+		connection.close();
 
 	}
 
 	@DELETE
 	@Path("/{id}")
-	public void deleteCountry(@PathParam("id") int id) {
+	public void deletePerson(@PathParam("id") int id) throws Exception {
 
-		personservice.deletePerson(id);
+		Database database = new Database();
+		Connection connection = database.Get_Connection();
+
+		Statement stmt = connection.createStatement();
+		connection.setAutoCommit(false);
+
+		String sql = "DELETE FROM person WHERE id ='" + id + "';";
+
+		stmt.execute(sql);
+
+		stmt.close();
+		connection.commit();
+		connection.close();
+
 	}
 
 }

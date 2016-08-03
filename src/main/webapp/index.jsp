@@ -10,7 +10,6 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-<script type="text/javascript" src="jquery.validate.js"></script>
 <!-- Latest compiled JavaScript -->
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -68,6 +67,7 @@
 						<tbody>
 
 							<tr ng-repeat="person in persons">
+<!-- 								<td display="none">{{person.id}}</td>				 -->
 								<td>{{person.tckn}}</td>
 								<td>{{person.firstname}}</td>
 								<td>{{person.surname}}</td>
@@ -157,7 +157,7 @@
 	<!-- BEGIN # MODAL DETAIL -->
 	<div class="modal fade" id="detail-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
-		style="display: none;">
+		style="display: none;"  ng-controller="postDataController">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" align="center">
@@ -177,6 +177,8 @@
 					<form id="register-form" method="post">
 						<div class="modal-body">
 						
+							<input style="display: none;" class="form-control" type="text"
+								 ng-model="selectedPerson.id" required><br>
 							<input class="form-control" type="text"
 								 ng-model="selectedPerson.tckn" required><br>
 							
@@ -197,10 +199,10 @@
 									
 <!-- 									ng-click düzenlenecek -->
 									<button value="submit" class="btn btn-primary btn-lg"
-									ng-click="insertData()">Sil</button>
+									ng-click="deleteData()">Sil</button>
 								
 								<button value="submit" class="btn btn-primary btn-lg"
-									ng-click="insertData()">Güncelle</button>
+									ng-click="putData()">Güncelle</button>
 							</div>
 						</div>
 					</form>
