@@ -27,7 +27,7 @@ app.controller('postDataController', function($scope, $http) {
 		})
 
 		.success(function(data, status, headers, config) {
-			console.log("Data Inserted Successfully");
+			console.log("Veri başarıyla kaydedildi kardeş.");
 		});
 	}
 	
@@ -43,7 +43,7 @@ app.controller('postDataController', function($scope, $http) {
 		})
 
 		.success(function(data, status, headers, config) {
-			console.log("Data putted Successfully");
+			console.log("Veri başarıyla güncellendi kardeş.");
 		});
 	}
 	
@@ -58,7 +58,7 @@ app.controller('postDataController', function($scope, $http) {
 		})
 
 		.success(function(data, status, headers, config) {
-			console.log("Data putted Successfully");
+			console.log("Veri başarıyla silindi kardeş.");
 		});
 	}
 	

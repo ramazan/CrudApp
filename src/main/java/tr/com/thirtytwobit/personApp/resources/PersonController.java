@@ -76,9 +76,6 @@ public class PersonController {
 	@PUT
 	public void updatePerson(Person person) throws Exception {
 
-		System.out.println("id : " + person.getId() + "Tckn : " + person.getTckn() + " \n ad : " + person.getFirstname()
-				+ "\n soyad: " + person.getSurname() + "\n adres : " + person.getAdress());
-
 		Database database = new Database();
 		Connection connection = database.Get_Connection();
 

@@ -65,18 +65,13 @@ $(function() {
                 var $rg_email=$('#register_email').val();
                 var $rg_password=$('#register_password').val();
                 if ($rg_username == "ERROR") {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
+                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Kayıt Hatası");
                 } else {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Registerasdasdasad OK");
-//                    $formHide.fadeOut();
-//                    $divForms.show();
-//                    $formRegister.focus();
-////                    $form.hide();
-////                    $(this).css("visibility", hidden);
-//                    $form.hide();
-                    jQuery('#login-modal').hide();
-                    jQuery('#page-modal').show();
-                    jQuery('#page-modal').focus();
+                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Kayıt Başarılı");
+//                    $formRegister.dismiss();
+//                    $("#dismissButton").onClick();
+//                    $("#dismissButton").Click();
+
                 }
                 return false;
                 break;

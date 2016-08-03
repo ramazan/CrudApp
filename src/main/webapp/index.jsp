@@ -27,7 +27,7 @@
 </head>
 <body>
 	
-	<div  ng-controller="PersonListCtrl">
+	<div id="all" ng-controller="PersonListCtrl">
 
 	<div id="page-modal" class="container" style="padding-top: 100px;">
 		<div class="row">
@@ -115,8 +115,7 @@
 							<div id="div-register-msg">
 								<div id="icon-register-msg"
 									class="glyphicon glyphicon-chevron-right"></div>
-								<span id="text-register-msg">Lütfen Gerekli Alanları
-									Eksiksiz Doldurunuz.</span>
+								<span id="text-register-msg"></span>
 							</div>
 							<br>
 								<input class="form-control" type="text"
@@ -133,10 +132,10 @@
 						</div>
 						<div class="modal-footer">
 							<div>
-								<button type="button" class="btn btn-primary btn-lg "
+								<button id="dismissButton" type="button" class="btn btn-primary btn-lg "
 									data-dismiss="modal">İptal</button>
-								<button value="submit" class="btn btn-primary btn-lg"
-									ng-click="insertData()">Kaydet</button>
+								<button value="submit" class="btn btn-primary btn-lg" data-dismiss="modal"
+									ng-click="insertData()"  >Kaydet</button>
 							</div>
 						</div>
 					</form>
@@ -198,10 +197,10 @@
 									data-dismiss="modal">İptal</button>
 									
 <!-- 									ng-click düzenlenecek -->
-									<button value="submit" class="btn btn-primary btn-lg"
+									<button value="submit" data-dismiss="modal" class="btn btn-primary btn-lg"
 									ng-click="deleteData()">Sil</button>
 								
-								<button value="submit" class="btn btn-primary btn-lg"
+								<button value="submit" data-dismiss="modal" class="btn btn-primary btn-lg"
 									ng-click="putData()">Güncelle</button>
 							</div>
 						</div>
