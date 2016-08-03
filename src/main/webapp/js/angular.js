@@ -7,7 +7,7 @@ app.controller('PersonListCtrl', function($scope, $http) {
 				$scope.persons = data;
 			});
 
-	$scope.selectedPerson="";
+	$scope.selectedPerson={};
 	
 	$scope.showPerson = function($person){
 		

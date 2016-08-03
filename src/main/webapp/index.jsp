@@ -27,6 +27,8 @@
 </style>
 </head>
 <body>
+	
+	<div  ng-controller="PersonListCtrl">
 
 	<div id="page-modal" class="container" style="padding-top: 100px;">
 		<div class="row">
@@ -48,7 +50,7 @@
 					<h2 class="panel-title" style="text-align:center">Kişiler Listesi</h2>
 				</div>
 				<br>
-				<div id="personsList" ng-controller="PersonListCtrl">
+				<div id="personsList" >
 					<table class="table">
 						<thead>
 							<tr class="filters">
@@ -69,8 +71,11 @@
 								<td>{{person.tckn}}</td>
 								<td>{{person.firstname}}</td>
 								<td>{{person.surname}}</td>
-								<td>index : {{$index}}</td>
+<!-- 								<td>index : {{$index}}</td> -->
 								<td>
+<!-- 								<td> -->
+<!-- 								  <input type="text" ng-model="person.firstname"> -->
+<!-- 								</td> -->
 									<button class="btn btn-primary" data-toggle="modal"
 						data-target="#detail-modal" ng-click="showPerson(person)">
 										<span class="glyphicon glyphicon-th-list"></span> Detay
@@ -114,13 +119,17 @@
 									Eksiksiz Doldurunuz.</span>
 							</div>
 							<br>
-							<input class="form-control" type="text"
-								placeholder="T.C Kimlik Numarası" ng-model="tckn" required><br>
-							<input class="form-control" type="text" placeholder="Ad"
-								ng-model="firstname" required><br> <input
-								class="form-control" type="text" placeholder="Soyad"
-								ng-model="surname" required><br> <input class="form-control"
-								type="text" placeholder="Adres" ng-model="adress" required>
+								<input class="form-control" type="text"
+									placeholder="T.C Kimlik Numarası" ng-model="tckn" required><br>
+									
+								<input class="form-control" type="text" placeholder="Ad"
+									ng-model="firstname" required><br>
+									 
+								 <input class="form-control" type="text" placeholder="Soyad"
+									ng-model="surname" required><br> 
+									
+								<input class="form-control"
+									type="text" placeholder="Adres" ng-model="adress" required>
 						</div>
 						<div class="modal-footer">
 							<div>
@@ -162,26 +171,34 @@
 				</div>
 
 				<!-- Begin # DIV Form -->
-				<div id="div-forms" ng-controller="PersonListCtrl"">
+				<div id="div-forms">
 
 					<!-- Begin | Register Form -->
 					<form id="register-form" method="post">
 						<div class="modal-body">
 						
 							<input class="form-control" type="text"
-								placeholder="T.C Kimlik Numarası" ng-model="tckn" required><br>
-							<input class="form-control" type="text" placeholder="{{persons[$index].name}}"
-								ng-model="firstname" required><br> <input
-								class="form-control" type="text" placeholder="Soyad"
-								ng-model="surname" required><br> <input class="form-control"
-								type="text" placeholder="Adres" ng-model="adress" required>
+								 ng-model="selectedPerson.tckn" required><br>
+							
+							<input class="form-control" type="text"
+								ng-model="selectedPerson.firstname" required><br> 
+								
+								<input
+								class="form-control" type="text" 
+								ng-model="selectedPerson.surname" required><br> 
+								
+								<input class="form-control"
+								type="text"  ng-model="selectedPerson.adress" required>
 						</div>
 						<div class="modal-footer">
 							<div>
 								<button type="button" class="btn btn-primary btn-lg "
 									data-dismiss="modal">İptal</button>
+									
+<!-- 									ng-click düzenlenecek -->
 									<button value="submit" class="btn btn-primary btn-lg"
 									ng-click="insertData()">Sil</button>
+								
 								<button value="submit" class="btn btn-primary btn-lg"
 									ng-click="insertData()">Güncelle</button>
 							</div>
@@ -197,6 +214,6 @@
 	</div>
 	<!-- END # MODAL DETAIL -->
 
-
+	</div>
 </body>
 </html>
