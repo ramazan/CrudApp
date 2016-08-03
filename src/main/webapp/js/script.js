@@ -52,11 +52,11 @@ $(document).ready(function(){
 
 $(function() {
     var $formRegister = $('#register-form');
+    var $formHide = $('#login-modal');
     var $divForms = $('#div-forms');
     var $modalAnimateTime = 300;
     var $msgAnimateTime = 150;
     var $msgShowTime = 2000;
-
     $("form").submit(function () {
         switch(this.id) {
             
@@ -67,7 +67,16 @@ $(function() {
                 if ($rg_username == "ERROR") {
                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
                 } else {
-                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
+                    msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Registerasdasdasad OK");
+//                    $formHide.fadeOut();
+//                    $divForms.show();
+//                    $formRegister.focus();
+////                    $form.hide();
+////                    $(this).css("visibility", hidden);
+//                    $form.hide();
+                    jQuery('#login-modal').hide();
+                    jQuery('#page-modal').show();
+                    jQuery('#page-modal').focus();
                 }
                 return false;
                 break;

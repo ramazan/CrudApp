@@ -39,7 +39,7 @@ public class PersonController {
 			personData = projectManager.getPersonsConnections();
 			// StringBuffer sb = new StringBuffer();
 			Gson gson = new Gson();
-			System.out.println(gson.toJson(personData));
+//			System.out.println(gson.toJson(personData));
 			persons = gson.toJson(personData);
 
 		} catch (Exception e) {

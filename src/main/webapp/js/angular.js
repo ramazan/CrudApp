@@ -1,21 +1,20 @@
 var app = angular.module('app', []);
 
 app.controller('PersonListCtrl', function($scope, $http) {
-	
-//	$scope.showData = function() {
-//
-//		$route.reload();
-//		
-//		console.log("Data Showed Successfully");
-//	}
-	
+
 	$http.get('http://localhost:8080/CrudApp/webapi/persons/').success(
 			function(data) {
 				$scope.persons = data;
 			});
-	
-	
 
+	$scope.selectedPerson="";
+	
+	$scope.showPerson = function($person){
+		
+		$scope.selectedPerson=$person;
+	}
+	
+	
 });
 
 app.controller('postDataController', function($scope, $http) {
@@ -33,10 +32,9 @@ app.controller('postDataController', function($scope, $http) {
 	}
 });
 
-
-
 app.controller('refreshController', function($scope) {
-	$scope.reloadPage = function(){window.location.reload();}
-	console.log("Data reload Successfully");
+	$scope.reloadPage = function() {
+		window.location.reload();
+	}
 
 });
