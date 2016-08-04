@@ -2,26 +2,14 @@
 	pageEncoding="UTF-8"%>
 <html ng-app="app">
 <head>
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="js/style.css">
-
-<!-- jQuery library -->
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<script src="js/script.js"></script>
-
 	
-	
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
-	<script src="js/angular.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/script.js"></script>
+		<script	src="js/angular.min.js"></script>
+		<script src="js/userService.js"></script>
 
 </style>
 </head>
@@ -90,7 +78,7 @@
 		</div>
 	</div>
 
-	<!-- BEGIN # MODAL LOGIN -->
+	<!-- BEGIN # MODAL REGİSTER -->
 	<div class="modal fade" id="login-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
 		style="display: none;">
@@ -147,7 +135,7 @@
 			</div>
 		</div>
 	</div>
-	<!-- END # MODAL LOGIN -->
+	<!-- END # MODAL REGİSTER -->
 	
 	
 	
