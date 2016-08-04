@@ -33,7 +33,7 @@
 		<div class="row">
 			<div class="panel panel-primary">
 				<br>
-				<div ng-controller="refreshController" style="padding-left: 20px">
+				<div  style="padding-left: 20px">
 					<!-- Yenile Butonu -->
 					<button class="btn btn-primary" ng-click="reloadPage();">
 						<span class="glyphicon glyphicon-refresh"></span> Yenile
@@ -107,7 +107,7 @@
 				</div>
 
 				<!-- Begin # DIV Form -->
-				<div id="div-forms" ng-controller="postDataController">
+				<div id="div-forms">
 
 					<!-- Begin | Register Form -->
 					<form id="register-form" method="post">
@@ -156,7 +156,7 @@
 	<!-- BEGIN # MODAL DETAIL -->
 	<div class="modal fade" id="detail-modal" tabindex="-1" role="dialog"
 		aria-labelledby="myModalLabel" aria-hidden="true"
-		style="display: none;"  ng-controller="postDataController">
+		style="display: none;">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" align="center">

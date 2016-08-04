@@ -15,9 +15,9 @@ app.controller('PersonListCtrl', function($scope, $http) {
 	}
 	
 	
-});
-
-app.controller('postDataController', function($scope, $http) {
+	
+	
+	
 	$scope.insertData = function() {
 		$http.post('http://localhost:8080/CrudApp/webapi/persons/', {
 			'tckn' : $scope.tckn,
@@ -27,6 +27,10 @@ app.controller('postDataController', function($scope, $http) {
 		})
 
 		.success(function(data, status, headers, config) {
+			$http.get('http://localhost:8080/CrudApp/webapi/persons/').success(
+					function(data) {
+						$scope.persons = data;
+					});
 			console.log("Veri başarıyla kaydedildi kardeş.");
 		});
 	}
@@ -43,6 +47,10 @@ app.controller('postDataController', function($scope, $http) {
 		})
 
 		.success(function(data, status, headers, config) {
+			$http.get('http://localhost:8080/CrudApp/webapi/persons/').success(
+					function(data) {
+						$scope.persons = data;
+					});
 			console.log("Veri başarıyla güncellendi kardeş.");
 		});
 	}
@@ -58,16 +66,22 @@ app.controller('postDataController', function($scope, $http) {
 		})
 
 		.success(function(data, status, headers, config) {
+			$http.get('http://localhost:8080/CrudApp/webapi/persons/').success(
+					function(data) {
+						$scope.persons = data;
+					});
 			console.log("Veri başarıyla silindi kardeş.");
 		});
 	}
 	
 	
-});
-
-app.controller('refreshController', function($scope) {
 	$scope.reloadPage = function() {
-		window.location.reload();
+		$http.get('http://localhost:8080/CrudApp/webapi/persons/').success(
+				function(data) {
+					$scope.persons = data;
+				});
 	}
-
+	
+	
 });
+
